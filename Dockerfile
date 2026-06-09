@@ -9,7 +9,7 @@ RUN apt-get update && \
     wget "https://github.com/PengjieRen/RepeatNet-pytorch/archive/refs/heads/master.zip" && \
     unzip master.zip && \
     mv RepeatNet-* /usr/local/bin/RepeatNet && \
-    echo "alias RepeatNet='python -m torch.distributed.launch --nproc_per_node=1 /usr/local/bin/RepeatNet/RepeatNet/Run.py --mode='" >> ~/.bashrc && \
+    echo "alias RepeatNet='python -m torch.distributed.launch --nproc_per_node=1 /usr/local/bin/RepeatNet/RepeatNet/Run.py" >> ~/.bashrc && \
     rm -rf master.zip && \
     rm -rf /root/.cache /tmp/*
 ENV PYTHONPATH="${PYTHONPATH}:/usr/local/bin/RepeatNet"
