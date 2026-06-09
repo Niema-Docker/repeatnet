@@ -12,3 +12,4 @@ RUN apt-get update && \
     echo "alias RepeatNet='python -m torch.distributed.launch --nproc_per_node=1 /usr/local/bin/RepeatNet/RepeatNet/Run.py --mode='" >> ~/.bashrc && \
     rm -rf master.zip && \
     rm -rf /root/.cache /tmp/*
+ENV PYTHONPATH="${PYTHONPATH}:/usr/local/bin/RepeatNet"
