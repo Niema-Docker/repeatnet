@@ -11,5 +11,4 @@ RUN apt-get update && \
     mv RepeatNet-* /usr/local/bin/RepeatNet && \
     echo "alias RepeatNet='python -m torch.distributed.launch --nproc_per_node=1 /usr/local/bin/RepeatNet/RepeatNet/Run.py --mode='" >> ~/.bashrc && \
     rm -rf master.zip && \
-    chmod a+x /usr/local/bin/run_*.py && \
     rm -rf /root/.cache /tmp/*
