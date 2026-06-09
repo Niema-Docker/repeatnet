@@ -5,8 +5,8 @@ Docker environment for RepeatNet
 From within `bash`, you can run RepeatNet as follows:
 
 ```bash
-$ RepeatNet train
-$ RepeatNet infer
+$ RepeatNet --mode train
+$ RepeatNet --mode infer
 ```
 
 More information can be found within the [official RepeatNet repository](https://github.com/PengjieRen/RepeatNet-pytorch).
