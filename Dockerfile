@@ -6,10 +6,10 @@ MAINTAINER Niema Moshiri <niemamoshiri@gmail.com>
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get upgrade -y && \
     DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y time unzip wget && \
-    wget "https://github.com/PengjieRen/RepeatNet-pytorch/archive/refs/heads/master.zip" && \
+    wget "https://github.com/niemasd/RepeatNet-pytorch/archive/refs/heads/master.zip" && \
     unzip master.zip && \
     mv RepeatNet-* /usr/local/bin/RepeatNet && \
-    echo "alias RepeatNet='python -m torch.distributed.launch --nproc_per_node=1 /usr/local/bin/RepeatNet/RepeatNet/Run.py" >> ~/.bashrc && \
+    echo "alias RepeatNet='torchrun --nproc_per_node=1 /usr/local/bin/RepeatNet/RepeatNet/Run.py'" >> ~/.bashrc && \
     rm -rf master.zip && \
     rm -rf /root/.cache /tmp/*
 ENV PYTHONPATH="${PYTHONPATH}:/usr/local/bin/RepeatNet"
